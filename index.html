@@ -1,12 +1,16 @@
-(function(){
+<!doctype html>
+<meta charset="utf-8">
+<title>Parallax прокрутка</title>
+<canvas width="550" height="410" style="border: 1px dashed black">
+</canvas>
+<script>
+function(){
 //Холст и поверхность рисования
  var canvas = document.querySelector("canvas");
  var drawingSurface = canvas.getContext("2d");
 //Массивы игровых объектов и загружаемых ресурсов
  var sprites = [];
  var assetsToLoad = [];
-159
-HTML5 технология. Часть 2.
  var missiles = [];
  var aliens = [];
  var messages = [];
@@ -35,8 +39,6 @@ HTML5 технология. Часть 2.
 //Создание объекта для отображения сообщения о конце игры
  var gameOverMessage = Object.create(messageObject);
  gameOverMessage.font = "n
-160
-HTML5 технология. Часть 2.
 //Состояния игры
  var LOADING = 0;
  var PLAYING = 1;
@@ -90,9 +92,7 @@ HTML5 технология. Часть 2.
  spaceKeyIsDown = false;
  }
  }, false);
-//Запуск цикла анимации игры
-161
-HTML5 технология. Часть 2.
+//Запуск цикла анимации игр
  update();
  function update()
  {
@@ -148,8 +148,6 @@ HTML5 технология. Часть 2.
  }
  //Если ни одна из клавиш не нажата, скорость перемещения 0
  if(!moveLeft && !moveRight)
-162
-HTML5 технология. Часть 2.
  {
  cannon.vx = 0;
  }
@@ -206,8 +204,6 @@ HTML5 технология. Часть 2.
  //Проверка, пересек ли пришелец нижний край холста
  if(alien.y > canvas.height + alien.height)
  {
-163
-HTML5 технология. Часть 2.
  //Завершение игры, если пришелец достиг Земли
  gameState = OVER;
  }
@@ -264,8 +260,6 @@ HTML5 технология. Часть 2.
  gameOverMessage.visible = true;
  if(score < scoreNeededToWin)
  {
-164
-HTML5 технология. Часть 2.
  gameOverMessage.text = "Земля захвачена!";
  }
  else
@@ -319,8 +313,6 @@ HTML5 технология. Часть 2.
  array.splice(i, 1);
  }
 }
-165
-HTML5 технология. Часть 2.
  function endGame()
 {
  gameOverMessage.visible = true;
@@ -368,3 +360,5 @@ HTML5 технология. Часть 2.
  }
  }
 }());
+</script>
+ 
